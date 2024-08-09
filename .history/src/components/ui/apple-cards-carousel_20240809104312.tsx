@@ -261,8 +261,6 @@ export const Card = ({
           alt={card.title}
           fill
           className="object-cover absolute z-10 inset-0"
-          sizes= "(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 33vw"
-          priority={false} 
         />
       </motion.button>
     </>

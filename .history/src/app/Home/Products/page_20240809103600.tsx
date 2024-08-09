@@ -1,4 +1,7 @@
+// src/app/Home/Carousel/CliniQXCarouselDemo.tsx
+
 import React from "react";
+import Image from "next/image";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import productData from "./productData";
 
@@ -9,13 +12,11 @@ export function CliniQXCarouselDemo() {
   ));
 
   return (
-    <div className="w-full h-full py-10 bg-black text-white">
-      <h2 className="max-w-6xl pl-4 mx-auto text-xl md:text-3xl font-bold">
-        {productData.productName}
+    <div className="w-full h-full py-10">
+      <h2 className="max-w-6xl pl-2 mx-auto text-xl md:text-3xl font-bold text-neutral-100">
+       {productData.productName}
       </h2>
-      <div className="max-w-6xl mx-auto">
-        <Carousel items={cards} />
-      </div>
+      <Carousel items={cards} />
     </div>
   );
 }
