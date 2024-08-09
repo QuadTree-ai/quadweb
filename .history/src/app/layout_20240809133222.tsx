@@ -1,4 +1,5 @@
-/* eslint-disable @next/next/no-page-custom-font */
+// src/app/layout.tsx
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { metadata } from "./Metadata";
@@ -7,36 +8,36 @@ import Footer from "@/app/Footer/page"; // Ensure this path is correct
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const renderIcons = () => {
-    return Object.entries(metadata.icons).map(([key, href], index) => (
-      <link key={index} rel="icon" sizes={key === 'apple' ? '180x180' : undefined} href={href} />
-    ));
-  };
-
-  const renderFonts = () => {
-    return metadata.fonts.map((font, index) => (
-      <link key={index} href={font} rel="stylesheet" />
-    ));
-  };
-
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-        {renderIcons()}
+        <meta name="keywords" content={metadata.keywords.join(", ")} />
+        <meta name="author" content={metadata.author} />
+        <title>{metadata.title}</title>
+
+        {/* Icons */}
+        <link rel="icon" href={metadata.icons.favicon} type="image/x-icon" />
+        <link rel="shortcut icon" href={metadata.icons.shortcut} type="image/png" />
+        <link rel="apple-touch-icon" href={metadata.icons.apple} sizes="180x180" type="image/png" />
         <link rel="manifest" href={metadata.manifest} />
-        {renderFonts()}
+
+        {/* Fonts */}
+        {metadata.fonts.map((font, index) => (
+          <link key={index} href={font} rel="stylesheet" />
+        ))}
       </head>
       <body className={`${inter.className} font-poppins`}>
         <div className="flex flex-col min-h-screen">
           <Navbar />
-          <main className="flex-grow pt-20">
-            {children}
-          </main>
+          <main className="flex-grow pt-20">{children}</main>
           <Footer />
         </div>
       </body>

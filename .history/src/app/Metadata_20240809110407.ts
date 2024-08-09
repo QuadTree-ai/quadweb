@@ -1,12 +1,12 @@
 export const metadata = {
   title: "QuadTree.ai - Pioneering AI Solutions",
-  description: "At QuadTree.ai, we leverage artificial intelligence to revolutionize industries, offering a suite of products including CliniQX—an advanced EHR system—and other AI-driven solutions that enhance operational efficiencies and transform business landscapes.",
+  description: "QuadTree.ai harnesses AI to transform industries with innovative solutions like CliniQX, an advanced EHR system, driving operational efficiency and business transformation.",
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-    shortcut: "/shortcut-icon.png",
+    icon: "/public/icons/favicon.ico",
+    apple: "/public/icons/apple-touch-icon.png",
+    shortcut: "/public/icons/shortcut-icon.png",
   },
-  manifest: "/site.webmanifest",
+  manifest: "/public/icons/site.webmanifest",
   fonts: [
     "https://fonts.googleapis.com/css2?family=Capriola&family=Baumans&family=Poppins:wght@300;400;600&display=swap",
     "https://fonts.googleapis.com/css2?family=Lovers+Quarrel&family=Poppins:wght@400;600&display=swap",

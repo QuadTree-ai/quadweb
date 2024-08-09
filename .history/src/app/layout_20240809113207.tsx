@@ -8,10 +8,15 @@ import Footer from "@/app/Footer/page"; // Ensure this path is correct
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+
   const renderIcons = () => {
-    return Object.entries(metadata.icons).map(([key, href], index) => (
-      <link key={index} rel="icon" sizes={key === 'apple' ? '180x180' : undefined} href={href} />
-    ));
+    return (
+      <>
+        <link rel="icon" href={metadata.icons.icon} sizes="32x32" />
+        <link rel="icon" href={metadata.icons.shortcut} sizes="16x16" />
+        <link rel="apple-touch-icon" href={metadata.icons.apple} sizes="180x180" />
+      </>
+    );
   };
 
   const renderFonts = () => {
@@ -25,8 +30,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords.join(", ")} />
+        <meta name="author" content={metadata.author} />
+        <title>{metadata.title}</title>
         {renderIcons()}
         <link rel="manifest" href={metadata.manifest} />
         {renderFonts()}
