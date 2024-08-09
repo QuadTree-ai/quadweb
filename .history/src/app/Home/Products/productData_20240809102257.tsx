@@ -1,11 +1,13 @@
 // src/app/Home/Products/productData.ts
 
-// Define interfaces for TypeScript to enforce type safety.
+// Define interfaces for TypeScript to enforce type safety if using TypeScript.
+// These interfaces help ensure that each piece of product data adheres to a specific structure.
+
 interface Feature {
   category: string;
   title: string;
   src: string;
-  content: string | null; // Explicitly indicate that content can be a string or null.
+  content: string | null; // Make explicit that content can be a string or null.
 }
 
 interface Product {
@@ -13,7 +15,8 @@ interface Product {
   features: Feature[];
 }
 
-// Define the product data using the interfaces above.
+// Define the product data using the interfaces above. This is optional if you are not using TypeScript.
+
 const productData: Product = {
   productName: "cliniQX",
   features: [
@@ -21,7 +24,7 @@ const productData: Product = {
       category: "AI Healthcare",
       title: "Advanced AI for Medical Diagnostics",
       src: "/apple-1.jpg", // Ensure these paths are correct and the assets are properly hosted.
-      content: "Integrating advanced AI to enhance diagnostic accuracy and efficiency."
+      content: "Integrating advanced AI to enhance diagnostic accuracy and efficiency." // Example content, replace 'null' with actual content if available.
     },
     {
       category: "EHR Integration",
