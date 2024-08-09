@@ -20,7 +20,7 @@ const nextConfig = {
     env: {
       CUSTOM_VAR: 'value',
     },
-    distDir: 'out', // This specifies the output directory for the build
+    distDir: '.next',
   };
   
   export default nextConfig;
