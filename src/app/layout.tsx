@@ -30,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {renderIcons()}
         <link rel="manifest" href={metadata.manifest} />
         {renderFonts()}
+        <meta name="facebook-domain-verification" content="fycynjzw9on9oubmfcsgyp818zpyt9" />
       </head>
       <body className={`${inter.className} font-poppins`}>
         <div className="flex flex-col min-h-screen">
